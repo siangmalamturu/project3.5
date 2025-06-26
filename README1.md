@@ -172,14 +172,6 @@ Dataset Ames Housing memiliki 81 fitur yang mencakup berbagai aspek properti. Be
 
 Teknik yang digunakan pada notebook dan laporan harus berurutan. Melakukan pembersihan dan persiapan dataset Ames Housing agar siap digunakan untuk proses pemodelan *machine learning*. Proses ini sangat krusial karena kualitas model sangat bergantung pada kualitas data input.
 
-**Menjelaskan proses data preparation yang dilakukan & Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut (Kriteria Tambahan)**:
-
-
-**Memuat ulang df untuk memastikan konsistensi alur**
-```df = pd.read_csv('dataset/train.csv')
-df_cleaned = df.copy()
-```
-
 ### 1. Penanganan Kolom `Id` dan Pemisahan Target 'SalePrice'
 #### Proses:
  Kolom `Id` dihapus dari dataset karena merupakan pengidentifikasi unik dan tidak memiliki nilai prediktif.
@@ -468,11 +460,12 @@ Untuk interpretasi yang lebih mudah dan relevan dengan bisnis, kami mengonversi 
 
 #### c. Komparasi dan Penentuan Model Terbaik
 Untuk memberikan gambaran lengkap, berikut adalah ringkasan kinerja semua model:
-Model	RMSE (Log Scale)	R2 Score (Log Scale)	RMSE (Original Scale)	MAE (Original Scale)	R2 Score (Original Scale)
-Linear Regression (Baseline)	0.1294	0.9103	~$26,000-$28,000*	~$17,000-$20,000*	~0.89-0.91*
-Random Forest Regressor (Baseline)	0.1468	0.8845	~$30,000-$35,000*	~$19,000-$23,000*	~0.85-0.89*
-XGBoost Regressor (Baseline)	0.1505	0.8786	~$31,000-$36,000*	~$20,000-$24,000*	~0.84-0.88*
-XGBoost Regressor (Tuned)	0.1337	0.9042	$27,101.01	$15,785.65	0.9042
+| Model | RMSE (Log Scale) |	R2 Score (Log Scale) | RMSE (Original Scale) | MAE (Original Scale) |	R2 Score (Original Scale) |
+| - | - | - | - | - | - |
+**Linear Regression (Baseline)** |	0.1294 |	0.9103 | 	~$26,000-$28,000* | 	~$17,000-$20,000* |	~0.89-0.91* |
+**Random Forest Regressor (Baseline)** |	0.1468 | 	0.8845 | ~$30,000-$35,000* |	~$19,000-$23,000* |	~0.85-0.89* |
+**XGBoost Regressor (Baseline)** |	0.1505 |	0.8786 |	~$31,000-$36,000* |	~$20,000-$24,000* |	~0.84-0.88* |
+**XGBoost Regressor (Tuned)** |	0.1337 |	0.9042 | 	$27,101.01 | 	$15,785.65 |	0.9042 |
 
 _Catatan:_ Nilai RMSE/MAE/R2 skala asli untuk model baseline tidak langsung dihitung di notebook, estimasi diberikan berdasarkan perbedaan RMSE log scale dan pola konversi.
 
